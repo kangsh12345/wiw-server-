@@ -12,6 +12,10 @@ module.exports = class User extends Sequelize.Model {
                 type: Sequelize.STRING(15),
                 allowNull: false,
             },
+            major: {
+                type: Sequelize.STRING(30),
+                allowNull: false,
+            },
             student_id: {
                 type: Sequelize.STRING(8),
                 allowNull: false,
@@ -28,7 +32,17 @@ module.exports = class User extends Sequelize.Model {
                 type: Sequelize.BOOLEAN,
                 allowNull: true,
                 defaultValue: false,
-            }
+            },
+            classroom: {
+                type: Sequelize.STRING(20),
+                allowNull: true,
+                defaultValue: false,
+            },
+            show: {
+                type: Sequelize.BOOLEAN,
+                allowNull: true,
+                defaultValue: true,
+            },
         },{
             sequelize,
             timestamps: true,   //createdAt(생성시간), updatedAt(업데이트시간) 컬럼 추가

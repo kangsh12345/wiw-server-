@@ -9,6 +9,8 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const chkRouter = require('./routes/chk');
+const changeshowRouter = require('./routes/changeShow');
+const popupRouter = require('./routes/popup');
 ///////////////
 
 
@@ -62,6 +64,8 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/chkid', chkRouter);
+app.use('/api/show', changeshowRouter);
+app.use('/api/popup', popupRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
